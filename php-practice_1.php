@@ -32,14 +32,11 @@ if ($device === "windows") {
 }
 
 // Q5 条件分岐-2 三項演算子
-$age = 17;
-if ($age < 20) {
-    $message = '未成年です。';
-} else {
-    $message = '成人です。';
-}
-    
-    echo $message;
+$age = 18;
+
+$age = ($age < 18) ? '未成年です。' : '成人です。';
+
+echo $age;
 
 // Q6 配列
 $kanto = ["東京都", "神奈川県", "群馬県", "栃木県", "千葉県", "茨城県", "埼玉県"];
@@ -77,8 +74,6 @@ $target_prefecture = "埼玉県";
 if (array_key_exists($target_prefecture, $kanto_capitals)) {
   $capital = $kanto_capitals[$target_prefecture]; 
   echo "{$target_prefecture}の県庁所在地は、{$capital}です。";
-} else {
-  echo "{$target_prefecture}は関東地方ではありません。";
 }
 
 // Q9 連想配列-3
@@ -104,11 +99,14 @@ if (in_array($prefecture, ["東京都", "神奈川県", "千葉県", "埼玉県"
 
 // Q10 関数-1
 function hello($name) {
-  return "{$name}さん、こんにちは。";
+  return "{$name}さん、こんにちは。\n";
 }
-      
-  echo hello("金谷") . PHP_EOL;
-  echo hello("安藤") . PHP_EOL;
+
+$name1 = hello("金谷");
+$name2 = hello("安藤");
+
+echo $name1;
+echo $name2;
 
 // Q11 関数-2
 function calcTaxInPrice($price) {
@@ -132,11 +130,11 @@ function distinguishNum($number) {
   }
 }
 
-$oddNumber = 11;
-$evenNumber = 24;
+$oddNumber = distinguishNum(11);
+$evenNumber = distinguishNum(24);
 
-echo distinguishNum($oddNumber) . PHP_EOL;
-echo distinguishNum($evenNumber) . PHP_EOL;
+echo $oddNumber . PHP_EOL;
+echo $evenNumber . PHP_EOL;
 
 // Q13 関数とswitch文
 function evaluateGrade($grade) {
