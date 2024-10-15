@@ -13,22 +13,17 @@ $num = $num / 2;
 echo $num;
 
 // Q3 日付操作
-$current_date = date('Y') . "年" . date('m') . "月" . date("d") . "日";
-$current_time = date("H") . "時" . date("i") . "分" . date("s") . "秒";
-
-echo "現在時刻は、" . $current_date . " " . $current_time . "です。";
+date_default_timezone_set('Asia/Tokyo');
+$current_datetime = date("Y年m月d日 H時i分s秒");
+echo "現在時刻は、" . $current_datetime . "です。";
 
 // Q4 条件分岐-1 if文
 $device = "mac";
 
-if ($device === "windows") {
-    echo "使用OSは、windowsです。";
+if ($device === "windows" || $device === "mac") {
+  echo "使用OSは、" . $device . "です。";
 } else {
-    if($device === "mac") {
-        echo "使用OSは、macです。";
-    } else {
-        echo "どちらでもありません。";
-    }
+  echo "どちらでもありません。";
 }
 
 // Q5 条件分岐-2 三項演算子
